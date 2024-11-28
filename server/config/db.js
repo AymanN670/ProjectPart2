@@ -1,1 +1,5 @@
-module.exports = {"URI":"mongodb+srv://aymanfatima:QfLDBG8MnNPkgrjI@finalproject.nxgzv.mongodb.net/"}
+require('dotenv').config();
+
+module.exports = {
+  URI: process.env.MONGO_URI,
+};
