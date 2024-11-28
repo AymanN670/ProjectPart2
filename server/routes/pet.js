@@ -1,43 +1,43 @@
 var express = require('express');
 var router = express.Router();
-let Book = require('../model/book')
-const book = require('../model/book');
-let bookController = require('../controllers/book.js')
-/* Get route for the book list - Read Operation */
+let Pet = require('../model/pet')
+const pet = require('../model/pet');
+let petController = require('../controllers/pet.js')
+/* Get route for the pet list - Read Operation */
 /*
 GET, 
 Post, 
 Put --> Edit/Update
 */
 
-/* Read operation --> Get route for displaying the books list*/
+/* Read operation --> Get route for displaying the pets list*/
 
 
 router.get('/',async(req,res,next)=>{
     try{
-        const BookList = await Book.find();
-        res.render('Book/list',{
+        const PetList = await Pet.find();
+        res.render('Pet/list',{
             title:'Pet Shop Information',
-            BookList:BookList
+            PetList:PetList
         })
     }
     catch(err){
         console.error(err)
-        res.render('Book/list',{
+        res.render('Pet/list',{
             error:'Error on Server'})
     }
 })
 /* Create operation --> Get route for displaying the Add Page */
 router.get('/add', async(req, res,next) => {
     try {
-        res.render('Book/add',{
+        res.render('Pet/add',{
             title: 'Add Pet Information'
         });
     }
     catch(err)
     {
         console.error(err)
-        res.render('Book/list',{
+        res.render('Pet/list',{
             error:'Error on Server'})
     }
 });
@@ -45,22 +45,22 @@ router.get('/add', async(req, res,next) => {
 router.post('/add', async(req, res,next) => {
     try {
         /* change this up for the assignment or project */
-        let newBook = Book({
+        let newPet = Pet({
             "PetName": req.body.PetName,
             "Age": req.body.Age,
             "Breed": req.body.Breed,
             "Description": req.body.Description,
             "Price": req.body.Price
         });
-        Book.create(newBook).then(()=> {
-            res.redirect('/bookslist');
+        Pet.create(newPet).then(()=> {
+            res.redirect('/petslist');
         })
 
     }
     catch(err)
     {
         console.error(err)
-        res.render('Book/list',{
+        res.render('Pet/list',{
             error:'Error on Server'})
     }
 });
@@ -69,11 +69,11 @@ router.get('/edit/:id',async(req, res,next) => {
     try {
 
         const id = req.params.id;
-        const bookToEdit = await Book.findById(id);
-        res.render('Book/edit',
+        const petToEdit = await Pet.findById(id);
+        res.render('Pet/edit',
             {
                 title: 'Edit Pet Information',
-                Book:bookToEdit
+                Pet:petToEdit
             }
         )
 
@@ -88,7 +88,7 @@ router.get('/edit/:id',async(req, res,next) => {
 router.post('/edit/:id',async(req, res,next) => {
     try {
         let id=req.params.id;
-        let updatedBook = Book({
+        let updatedPet = Pet({
             "_id":id, 
             "PetName":req.body.PetName,
             "Age":req.body.Age,
@@ -96,15 +96,15 @@ router.post('/edit/:id',async(req, res,next) => {
             "Description":req.body.Description,
             "Price":req.body.Price
         })
-        Book.findByIdAndUpdate(id, updatedBook).then(()=>{
-            res.redirect('/bookslist')
+        Pet.findByIdAndUpdate(id, updatedPet).then(()=>{
+            res.redirect('/petslist')
         })
     }
 
     catch(err)
     {
         console.error(err)
-        res.render('Book/list',{
+        res.render('Pet/list',{
             error:'Error on Server'})
     }
 });
@@ -112,13 +112,13 @@ router.post('/edit/:id',async(req, res,next) => {
 router.get('/delete/:id',async(req, res, next) => {
     try{
         let id=req.params.id;
-        Book.deleteOne({_id:id}).then(()=>{
-            res.redirect('/bookslist')
+        Pet.deleteOne({_id:id}).then(()=>{
+            res.redirect('/petslist')
         })
     }
     catch(err){
         console.error(err)
-        res.render('Book/list',{
+        res.render('Pet/list',{
             error:'Error on Server'})
     }
 });
