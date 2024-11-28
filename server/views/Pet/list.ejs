@@ -1,12 +1,12 @@
 <%- include ../Partials/header.ejs %>
 <%- include ../Partials/main_nav.ejs %>
-<link rel="stylesheet" href="Content/book.css">
+<link rel="stylesheet" href="Content/pet.css">
 <main class="container">
     <div class="row">
         <div class="offset-md-1 col-md-10">
             <h1><%= title %></h1>
             <br>
-            <a href="/bookslist/add" class="btn btn-primary" role="button">
+            <a href="/petslist/add" class="btn btn-primary" role="button">
                 <i class="fas fa-plus-circle"></i> Add Pet Information
             </a>
         <table class="table table-bordered table-striped table-hover">
@@ -21,15 +21,15 @@
                 <th class="text-center col-1">Delete</th>
 
             </tr>
-            <% for(let count=0;count<BookList.length;count++) { %>
+            <% for(let count=0;count<PetList.length;count++) { %>
             <tr class="d-flex">
-                <td class="text-center col-2"><%= BookList[count].PetName %></td>
-                <td class="text-center col-2"><%= BookList[count].Age %></td>
-                <td class="text-center col-2"><%= BookList[count].Breed %></td>
-                <td class="col-5"><%= BookList[count].Description %></td>
-                <td class="text-center col-1"><%= BookList[count].Price %></td>
+                <td class="text-center col-2"><%= PetList[count].PetName %></td>
+                <td class="text-center col-2"><%= PetList[count].Age %></td>
+                <td class="text-center col-2"><%= PetList[count].Breed %></td>
+                <td class="col-5"><%= PetList[count].Description %></td>
+                <td class="text-center col-1"><%= PetList[count].Price %></td>
                 <td class="text-center col-1"> 
-                    <a href="/bookslist/edit/<%= BookList[count]._id%>"
+                    <a href="/petslist/edit/<%= PetList[count]._id%>"
                         class="btn btn-primary btn-sm">
                     <i class="fas fa-pencil-alt"></i>Edit 
 
@@ -37,7 +37,7 @@
                     </td>
 
                 <td class="text-center col-1"> 
-                    <a href="/bookslist/delete/<%= BookList[count]._id%>"
+                    <a href="/petslist/delete/<%= PetList[count]._id%>"
                         class="btn btn-danger btn-sm">
                     <i class="fas fa-trash-alt"></i>Delete
 
