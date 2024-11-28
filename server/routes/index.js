@@ -4,6 +4,10 @@ const passport=require('passport');
 const DB = require('../config/db');
 let userModel = require('../model/User');
 let User = userModel.User;
+const passport=require('passport');
+const DB = require('../config/db');
+let userModel = require('../model/User');
+let User = userModel.User;
 
 /* GET index page. */
 router.get('/', function(req, res, next) {
