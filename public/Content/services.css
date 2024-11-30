@@ -14,6 +14,9 @@ body {
     margin-top: 20px;
 }
 
+
+
+
 /* Styling for each section (image + text) */
 .section {
     text-align: center;
@@ -22,6 +25,7 @@ body {
 
 /* Image size styling */
 .section img {
+    margin-top: 100px;
     width: 200px; /* Set image width */
     height: auto;
 }
