@@ -18,6 +18,7 @@ router.get('/',async(req,res,next)=>{
         const PetList = await Pet.find();
         res.render('Pet/list',{
             title:'Pet Shop Information',
+            displayName: req.user ? req.user.displayName: '',
             PetList:PetList
         })
     }
@@ -31,7 +32,8 @@ router.get('/',async(req,res,next)=>{
 router.get('/add', async(req, res,next) => {
     try {
         res.render('Pet/add',{
-            title: 'Add Pet Information'
+            title: 'Add Pet Information',
+            displayName: req.user ? req.user.displayName: ''
         });
     }
     catch(err)
@@ -73,6 +75,7 @@ router.get('/edit/:id',async(req, res,next) => {
         res.render('Pet/edit',
             {
                 title: 'Edit Pet Information',
+                displayName: req.user ? req.user.displayName: '',
                 Pet:petToEdit
             }
         )

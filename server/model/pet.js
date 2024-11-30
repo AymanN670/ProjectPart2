@@ -6,7 +6,7 @@ let petModel = mongoose.Schema({
     Age: String,
     Breed:String,
     Description:String,
-    Price: Number
+    Price:Number
 },
 {
     collection:"pets"
