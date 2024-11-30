@@ -2,4 +2,63 @@
 <%-include ../Partials/main_nav.ejs %>
 <link rel="stylesheet" type="text/css" href="Content/services.css"> 
 <h2> This page is going to be about what we offer </h2>
+
+<style>
+    /* Ensure the body has proper margin and padding */
+    body {
+        font-family: sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Container to hold everything */
+    .container {
+        display: flex; /* Arrange images horizontally */
+        justify-content: space-between; /* Add space between images */
+        align-items: flex-start; /* Align items at the top */
+        padding: 20px;
+        margin-top: 20px;
+    }
+
+    /* Styling for each section (image + text) */
+    .section {
+        text-align: center;
+        width: 30%; /* Adjust width to fit three items in a row */
+    }
+
+    /* Image size styling */
+    .section img {
+        width: 200px; /* Set image width */
+        height: auto;
+    }
+
+    /* Text styling */
+    .section p {
+        font-size: 1rem;
+        line-height: 1.5;
+        margin-top: 10px; /* Space between image and text */
+    }
+
+</style>
+
+<div class="container">
+    <div class="section">
+        <!-- Image on the left -->
+        <img src="/Assets/images/grooming.jpg" alt="Grooming Puppy">
+        <p> Our store does grooming with the starting price being 10 dollars.</p>
+    </div>
+
+    <div class="section">
+        <!-- Image in the middle -->
+        <img src="/Assets/images/colered.jpg" alt="Colored Puppy">
+        <p> We also do pet safe hair dye with the starting price being 15 dollars(According to the pet you own)</p>
+    </div>
+
+</div>
+
+<!-- Text content -->
+<p> We also have a how to solve crimes class with our lead trainer Flash Centry prices starting at 25 dollars</p>
+<p> We can also take you and your pet on a survival instincts trip for 50 dollars.(ps it will get muddy)</p>
+<p> We also do a beginners cooking class for new pet owners so you and your pet so you both can get closer and becpome a family.</p>
+
 <%- include ../Partials/footer.ejs %>
