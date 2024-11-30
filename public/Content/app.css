@@ -65,3 +65,23 @@ button.btn-warning:hover {
 .navbar.bg-dark {
     background: linear-gradient(to right, #f7a8b8, #f3b8c1);
 }
+
+.navbar .nav-link {
+    color: #6f4f28; /* Brown color */
+}
+
+.navbar .nav-link:hover {
+    background-color: #3e2b1e; /* Dark brown background on hover */
+    color: #fff; /* White text color when hovering */
+}
+
+
+.navbar .navbar-brand {
+    color: #6f4f28; /* Brown color */
+    font-weight: bold;
+}
+
+
+footer .navbar-text {
+    color: #6f4f28; /* Brown text color */
+}
