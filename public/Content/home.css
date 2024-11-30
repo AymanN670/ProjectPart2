@@ -1,5 +1,5 @@
 body {
-    background-color: #f3e5f5; /* Set a light pink background color */
+    background: linear-gradient(to right, #f7a8b8, #f3b8c1);
 }
 
 /* Style for the h1 element */

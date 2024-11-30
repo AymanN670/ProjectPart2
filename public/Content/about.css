@@ -1,4 +1,5 @@
 body {
-    background-color: #f3e5f5
-    
+    background: linear-gradient(to right, #f7a8b8, #f3b8c1);
+    margin: 0;
+    font-family: Arial, sans-serif;
 }

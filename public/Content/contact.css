@@ -2,7 +2,7 @@
 
 /* Style for the body of the page */
 body {
-    background-color: #f3e5f5; /* Light purple background color */
+    background: linear-gradient(to right, #f7a8b8, #f3b8c1);
 }
 
 /* Style for the contact title element */
