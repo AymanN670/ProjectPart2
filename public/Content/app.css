@@ -61,3 +61,7 @@ button.btn-warning {
 button.btn-warning:hover {
     background-color: #e91e63;  /* Darker pink on hover */
 }
+
+.navbar.bg-dark {
+    background: linear-gradient(to right, #f7a8b8, #f3b8c1);
+}
